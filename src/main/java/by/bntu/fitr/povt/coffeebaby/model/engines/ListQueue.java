@@ -8,7 +8,6 @@ public class ListQueue extends CommonList {
 
         Stone element = node.element;
         node = node.next;
-        size--;
         return element;
 
     }

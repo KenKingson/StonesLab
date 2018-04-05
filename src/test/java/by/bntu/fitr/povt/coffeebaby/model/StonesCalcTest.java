@@ -1,4 +1,4 @@
-package by.bntu.fitr.povt.coffeebaby.model;
+/*package by.bntu.fitr.povt.coffeebaby.model;
 
 import org.junit.Test;
 
@@ -32,4 +32,4 @@ public class StonesCalcTest {
         assertArrayEquals(stones1,stones);
     }
 
-}
+}*/

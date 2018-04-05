@@ -1,4 +1,4 @@
-package by.bntu.fitr.povt.coffeebaby.model;
+/*package by.bntu.fitr.povt.coffeebaby.model;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -38,3 +38,4 @@ public class StonesCalc implements Calculator {
         return price;
     }
 }
+*/

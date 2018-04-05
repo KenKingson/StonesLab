@@ -1,6 +1,10 @@
 package by.bntu.fitr.povt.coffeebaby.controller;
 
 import by.bntu.fitr.povt.coffeebaby.model.*;
+import by.bntu.fitr.povt.coffeebaby.model.engines.ArrayQueue;
+import by.bntu.fitr.povt.coffeebaby.model.engines.ArrayStack;
+import by.bntu.fitr.povt.coffeebaby.model.engines.ListQueue;
+import by.bntu.fitr.povt.coffeebaby.model.engines.ListStack;
 import by.bntu.fitr.povt.coffeebaby.view.Inputer;
 import by.bntu.fitr.povt.coffeebaby.view.View;
 
@@ -8,12 +12,15 @@ public class Controller {
     public static void main(String[] args) {
 
         StoneMaster stoneMaster = new StoneMaster();
-        int choise,numberOfStones;
+        int choice, countOfStones;
         View.output("Please, input number of stones in your necklace: ");
-        numberOfStones = Inputer.inputInt();
-        Necklace necklace = new Necklace(numberOfStones);
-        necklace = stoneMaster.createNecklace(necklace, numberOfStones);
-        StonesCalc stonesCalc = new StonesCalc();
+        countOfStones = Inputer.inputInt();
+        Necklace necklace = new Necklace(new ArrayQueue());
+        Mine mine = Mine.getMine();
+        mine.extractionStone();
+        necklace = stoneMaster.createNecklace(necklace, countOfStones);
+
+       // StonesCalc stonesCalc = new StonesCalc();
         while(true)
         {
             View.output("\nMenu:\n"
@@ -23,19 +30,19 @@ public class Controller {
                     +"4.Sorting stones by weigth\n"
                     +"5.Sorting stones by price\n"
                     +"6.Exit");
-            choise = Inputer.inputInt();
-            switch(choise){
+            choice = Inputer.inputInt();
+            switch(choice){
                 case 1:{
                     View.output(necklace+"");
                     break;
                 }
-                case 2:{
+                /*case 2:{
                     View.output("Total price for stones in necklace: "
                             + String.format("%1.2f", stonesCalc.totalPriceForNecklace(necklace)));
                     break;
                 }
                 case 3:{
-                    View.output("Total weight i  n carats: "
+                    View.output("Total weight in carats: "
                     + String.format("%1.2f", stonesCalc.totalCaratWeigth(necklace)));
                     break;
                 }
@@ -50,10 +57,16 @@ public class Controller {
                     stonesCalc.sortStonesByPrice(necklace);
                     View.output(necklace+"");
                     break;
-                }
+                }*/
                 case 6:{
                     System.exit(0);
                 }
+
+                break;
+                case 7:{
+                    necklace.addStone(mine.extractionStone());
+                }
+                break;
                 default:
                     View.output("Error: Incorrect choise.");
             }

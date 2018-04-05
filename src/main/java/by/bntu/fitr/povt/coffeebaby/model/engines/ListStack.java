@@ -9,20 +9,12 @@ public class ListStack extends CommonList {
 
         Node help = node;
 
-        if (size == 1) {
-            Stone element = help.element;
-            help.next = null;
-            size--;
-            return element;
-        }
-
-        for (int i = 0; i < size - 2; i++) {
+        for (int i = 1; i < size() - 1; i++) {
             help = help.next;
         }
-        Stone element = help.element;
+        Stone helpStone = help.next.element;
         help.next = null;
-        size--;
-        return element;
+        return helpStone;
     }
 
 

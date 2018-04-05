@@ -1,4 +1,4 @@
-package by.bntu.fitr.povt.coffeebaby.model;
+/*package by.bntu.fitr.povt.coffeebaby.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,4 +32,4 @@ public class JewelerTest {
 
     }
 
-}
+}*/

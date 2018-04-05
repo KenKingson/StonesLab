@@ -10,4 +10,7 @@ public interface List {
     Stone pop();
 
     int size();
+
+    Stone getElement(int index);
+
 }

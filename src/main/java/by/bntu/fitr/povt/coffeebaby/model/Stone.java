@@ -5,10 +5,8 @@ public abstract class Stone {
     private double price;
 
 
-    public Stone() {
-    }
-
-    ;
+    public Stone()
+    {};
 
     public Stone(double weigth, double price) {
         this.weigth = weigth;

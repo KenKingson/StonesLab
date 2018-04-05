@@ -1,40 +1,44 @@
 package by.bntu.fitr.povt.coffeebaby.model;
 
 
-import java.util.Arrays;
+import by.bntu.fitr.povt.coffeebaby.model.engines.List;
 
-public class Necklace {
-    private final Stone[] matrix;
 
-    public Necklace(Stone[] matrix) {
-        this.matrix = matrix;
+
+public class Necklace<T extends List> {
+    private T container;
+
+    public Necklace(T containers) {
+        this.container = containers;
     }
 
-    public Necklace(int size) {
-        matrix = new Stone[size];
+
+
+
+    public T getNecklace() {
+        return container;
     }
 
-    public Stone[] getNecklace() {
-        return matrix;
+    public void deleteStone(){
+        container.pop();
     }
 
-    public Stone getItem(int index) {
-        if (index >= 0 && index < matrix.length) {
-            return matrix[index];
-        }
-        throw new IndexOutOfBoundsException();
+    public void addStone(Stone stone){
+        container.push(stone);
     }
-
-    public void setStone(int index, Stone stone) {
-        if (index < matrix.length) {
-            matrix[index] = stone;
-        }
-    }
-
 
     @Override
     public String toString() {
-        return "Necklace{" + Arrays.toString(matrix) +
-                '}';
+
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0;i < container.size();i++) {
+
+              builder.append(container.getElement(i).toString());
+
+        }
+        System.out.println(container.size());
+            return "Necklace{" + builder + " }";
+
+
     }
 }

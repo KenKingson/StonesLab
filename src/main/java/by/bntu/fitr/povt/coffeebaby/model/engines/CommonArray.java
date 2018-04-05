@@ -3,10 +3,15 @@ package by.bntu.fitr.povt.coffeebaby.model.engines;
 import by.bntu.fitr.povt.coffeebaby.model.Stone;
 
 public abstract class CommonArray extends Checker {
-    protected Stone[] array;
+    protected Stone[] array = new Stone[0];
+
+    public Stone getElement(int index){
+        return this.array[index];
+    }
 
 
     public void push(Stone element) {
+
         Stone[] nextArray = new Stone[this.size() + 1];
         System.arraycopy(this.array, 0, nextArray, 0, this.array.length);
         nextArray[nextArray.length - 1] = element;

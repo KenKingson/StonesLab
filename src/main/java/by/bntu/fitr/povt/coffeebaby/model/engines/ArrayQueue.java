@@ -5,6 +5,7 @@ import by.bntu.fitr.povt.coffeebaby.model.Stone;
 public class ArrayQueue extends CommonArray {
 
 
+
     public Stone pop() {
 
         if (isEmpty()) {
